@@ -2,6 +2,8 @@
 
 ### This is the source code for https://kastach.me
 
+[![Build Status](https://travis-ci.org/shevron/kastach.me.svg?branch=master)](https://travis-ci.org/shevron/kastach.me)
+
 ## What is it? 
 COVID-19 Daily health statement form for kindergarten kids, as required by the 
 State of Israel Ministry of Education. 
@@ -16,6 +18,16 @@ or email and be done with it.
 Feel free to offer improvements and patches and report bugs. However, keep in
 mind this is something I'm doing for free, in my limited spare time, so PRs 
 are more welcome than just bug reports. 
+
+While currently there are no tests for this code, you can run lint simply 
+by running:
+
+    make test
+
+In the future, this command may also run some unit tests. 
+
+PRs that do not pass `make test` will not be accepted. For convenience, this
+process is also executed by Travis CI automatically for each push / PR.  
 
 ## License
 (C) 2020 Shahar Evron, all rights reserved. 
