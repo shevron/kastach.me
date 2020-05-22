@@ -1,0 +1,42 @@
+{
+  "name": "kastach.me",
+  "version": "1.0.0",
+  "description": "A website to generate COVID-19 health statements as required by the Israeli Ministry of Education",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack-dev-server --content-base dist --host 0.0.0.0 --hot",
+    "lint": "eslint ./src --ext .js"
+  },
+  "keywords": [],
+  "author": "Shahar Evron <shahar.evron@gmail.com>",
+  "license": "BSD-3",
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^6.0.1",
+    "css-loader": "^3.5.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "write-file-webpack-plugin": "^4.5.1"
+  },
+  "dependencies": {
+    "bootstrap-v4-rtl": "^4.4.1-2",
+    "jquery": "^3.5.1",
+    "moment": "^2.26.0",
+    "popper.js": "^1.16.1",
+    "signature_pad": "^3.0.0-beta.3",
+    "trim-canvas": "^0.1.2"
+  }
+}

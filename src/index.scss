@@ -1,0 +1,20 @@
+body {
+  &:root {
+    direction: rtl;
+  }
+}
+
+.signature-container {
+  width: 500px;
+
+  canvas {
+    border: 1px dashed #c0c0c0;
+  }
+
+  .sig-controls {
+    float: left;
+    position: relative;
+    bottom: 3em;
+    left: 0.5em;
+  }
+}

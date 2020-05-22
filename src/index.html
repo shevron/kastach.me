@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>הצהרת בריאות יומית לגן</title>
+</head>
+<body class="rtl">
+    <main class="container-fluid">
+        <header>
+            <h1>טופס הצהרת בריאות יומית</h1>
+        </header>
+        <form id="declaration-form">
+            <fieldset>
+                <div class="form-group row">
+                    <label for="field-name" class="col-sm-2 col-form-label">שם התלמיד:</label>
+                    <input type="text" id="field-name" name="name" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="field-idn" class="col-sm-2 col-form-label">מס ת״ז:</label>
+                    <input type="text" id="field-idn" name="idn" pattern="[0-9]{9}"/>
+                </div>
+
+                <div class="form-group row">
+                    <label for="field-age" class="col-sm-2 col-form-label">גיל:</label>
+                    <input type="number" id="field-age" name="age" step="any" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row">
+                    <label for="field-inst-name" class="col-sm-2 col-form-label">שם המסגרת:</label>
+                    <input type="text" id="field-inst-name" name="instName" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="field-teacher-name" class="col-sm-2 col-form-label">שם הגננת:</label>
+                    <input type="text" id="field-teacher-name" name="teacherName" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div class="form-group row">
+                    <label for="field-parent-name" class="col-sm-2 col-form-label">שם ההורה:</label>
+                    <input type="text" id="field-parent-name" name="parentName" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="field-phone" class="col-sm-2 col-form-label">טלפון:</label>
+                    <input type="text" id="field-phone" name="phone" />
+                </div>
+            </fieldset>
+
+            <article>
+                <p id="statement-top"><span>אנו מצהירים בנוגע לילדי / ילדתי, כדלהלן</span>:</p>
+                <ul id="statement-bullets">
+                    <li>מדדתי חום לילדי / ילדתי, ונמצא כי חום גופו/ה אינו עולה על 38 מעלות צלזיוס</li>
+                    <li>לילדי / ילדתי אין תסמיני קורונה (שיעול, קושי בנשימה או כל תסמין נשימתי אחר)</li>
+                    <li>ילדי / ילדתי לא נחשף / נחשפה לחולה קורונה או לאדם הנמצא בבידוד</li>
+                </ul>
+                <p>באנו על החתום:</p>
+            </article>
+            <fieldset>
+                חתימה פה וגם תאריך
+                <div class="signature-container">
+                    <canvas id="signature" width="500" height="200"></canvas>
+                    <a id="signature-clear" class="btn btn-sm btn-warning sig-controls">נקה</a>
+                </div>
+            </fieldset>
+            <fieldset class="checkbox-wrapper">
+                <input id="field-remember-me" type="checkbox" name="rememberMe" value="yes" />
+                <label for="field-remember-me">זכור אותי לפעם הבאה</label>
+            </fieldset>
+            <fieldset class="cta-wrapper">
+                <button type="submit" class="btn btn-primary">הורד הצהרת בריאות</button>
+            </fieldset>
+        </form>
+    </main>
+    <img src="assets/moe-logo.png" alt="משרד החינוך" id="moe-logo" style="display: none" />
+</body>
+</html>
