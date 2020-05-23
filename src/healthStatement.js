@@ -38,10 +38,10 @@ function copyCanvasContents(source) {
 }
 
 class HealthStatement {
-  constructor(fields) {
+  constructor(fields, date) {
     this.fields = fields;
     this.signature = null;
-    this.date = null;
+    this.date = date;
     this.canvas = null;
 
     this.canvasWidth = 800;
@@ -78,6 +78,15 @@ class HealthStatement {
     this._drawSignature();
 
     return this;
+  }
+
+  preview(containerNode) {
+    this.draw();
+    if (containerNode.hasChildNodes()) {
+      containerNode.replaceChild(this.canvas, containerNode.firstChild);
+    } else {
+      containerNode.appendChild(this.canvas);
+    }
   }
 
   async toBlob() {

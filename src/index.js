@@ -18,23 +18,17 @@ function initHealthStatement(form, signaturePad) {
 
 function createHealthStatement(form, signature, signaturePad, date = moment()) {
   const formValues = Util.serializeForm(form);
-
-  if (formValues.rememberMe === 'yes') {
-    Storage.save({
-      ...formValues,
-      signature: signaturePad.toData(),
-    });
-  } else {
-    Storage.clear();
-  }
-
   const statement = new HealthStatement(formValues);
   statement.addSignature(signature, date);
 
+  return statement;
+}
+
+function downloadHealthStatement(statement) {
   statement
     .draw()
     .toBlob().then((blob) => {
-      Util.downloadBlob(blob, `hatzhara-${date.format('YYYY-MM-DD')}.png`);
+      Util.downloadBlob(blob, `hatzhara-${statement.date.format('YYYY-MM-DD')}.png`);
     });
 }
 
@@ -42,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const sigField = document.getElementById('signature');
   const form = document.getElementById('declaration-form');
   const signature = new SignaturePad(sigField);
+  const previewContainer = document.getElementById('preview');
 
   document.getElementById('signature-clear').addEventListener('click', () => {
     signature.clear();
@@ -55,6 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
       window.alert('יש לחתום על ההצהרה');
       return;
     }
-    createHealthStatement(event.target, sigField, signature);
+    const statement = createHealthStatement(event.target, sigField, signature);
+    if (statement.fields.rememberMe === 'yes') {
+      Storage.save({
+        ...statement.fields,
+        signature: signature.toData(),
+      });
+    } else {
+      Storage.clear();
+    }
+    downloadHealthStatement(statement);
   });
+
+  const preview = () => createHealthStatement(form, sigField, signature).preview(previewContainer);
+  preview();
+  form.addEventListener('focusout', preview);
+  sigField.addEventListener('mouseout', preview);
 });
