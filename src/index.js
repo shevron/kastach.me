@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import 'bootstrap-v4-rtl';
 import moment from 'moment';
 import SignaturePad from 'signature_pad';
@@ -40,18 +39,18 @@ function createHealthStatement(form, signature, signaturePad, date = moment()) {
     });
 }
 
-$(() => {
+document.addEventListener('DOMContentLoaded', () => {
   const sigField = document.getElementById('signature');
   const form = document.getElementById('declaration-form');
   const signature = new SignaturePad(sigField);
 
-  $('#signature-clear').on('click', () => {
+  document.getElementById('signature-clear').addEventListener('click', () => {
     signature.clear();
   });
 
   initHealthStatement(form, signature);
 
-  $(form).on('submit', (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (signature.isEmpty()) {
       window.alert('יש לחתום על ההצהרה');

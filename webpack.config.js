@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
-const webpack = require('webpack');
 
 // const env = process.env.NODE_ENV || 'development';
 // const isDev = env === 'development';
@@ -25,9 +24,6 @@ module.exports = {
     new WriteFilePlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    }),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
     }),
   ],
   module: {
