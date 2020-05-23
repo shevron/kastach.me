@@ -1,4 +1,3 @@
-import 'bootstrap-v4-rtl';
 import moment from 'moment';
 import SignaturePad from 'signature_pad';
 
