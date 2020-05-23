@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>הצהרת בריאות יומית לגן</title>
 </head>
-<body class="rtl">
-    <main class="container-fluid">
+<body>
+    <main class="container main-container rtl">
         <header>
             <h1>טופס הצהרת בריאות יומית</h1>
         </header>
-        <form id="declaration-form">
+        <form id="declaration-form" class="container-fluid">
             <fieldset>
                 <div class="form-group row">
                     <label for="field-name" class="col-sm-2 col-form-label">שם התלמיד:</label>
@@ -60,9 +60,8 @@
                 <p>באנו על החתום:</p>
             </article>
             <fieldset>
-                חתימה פה וגם תאריך
                 <div class="signature-container">
-                    <canvas id="signature" width="500" height="200"></canvas>
+                    <canvas id="signature" width="400" height="200">חתימה כאן</canvas>
                     <a id="signature-clear" class="btn btn-sm btn-warning sig-controls">נקה</a>
                 </div>
             </fieldset>

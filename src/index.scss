@@ -1,20 +1,28 @@
 body {
+  background-color: #eee;
   &:root {
     direction: rtl;
   }
 }
 
+.main-container {
+  background-color: white;
+  padding: 1em;
+}
+
 .signature-container {
-  width: 500px;
+  position: relative;
+  width: 100%;
+  height: 200px;
 
   canvas {
-    border: 1px dashed #c0c0c0;
+    position: absolute;
+    border: 1px dashed #aaa;
   }
 
   .sig-controls {
-    float: left;
-    position: relative;
-    bottom: 3em;
-    left: 0.5em;
+    position: absolute;
+    bottom: 0.5em;
+    right: 0.5em;
   }
 }
