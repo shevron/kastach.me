@@ -8,7 +8,6 @@ import HealthStatement from './healthStatement';
 import Storage from './storage';
 
 import './index.scss';
-import 'bootstrap-v4-rtl/scss/bootstrap-rtl.scss';
 
 function initHealthStatement(form, signaturePad) {
   const savedData = Storage.load();

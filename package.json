@@ -4,8 +4,8 @@
   "description": "A website to generate COVID-19 health statements as required by the Israeli Ministry of Education",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "dev": "NODE_ENV=development webpack-dev-server --content-base dist --host 0.0.0.0 --hot",
+    "build": "webpack --mode=production",
+    "dev": "webpack-dev-server --mode-development --content-base dist --host 0.0.0.0 --hot",
     "lint": "eslint ./src --ext .js"
   },
   "keywords": [],

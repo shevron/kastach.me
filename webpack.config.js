@@ -15,7 +15,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-
   },
   plugins: [
     new CopyPlugin({
@@ -44,7 +43,7 @@ module.exports = {
         use: 'babel-loader',
       }, {
         test: /(\.css|\.scss)$/,
-        // exclude: /node_modules/,
+        exclude: /node_modules/,
         use: [
           'style-loader', // creates style nodes from JS strings
           'css-loader', // translates CSS into CommonJS
