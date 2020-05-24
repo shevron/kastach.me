@@ -70,11 +70,9 @@
                 <label for="field-remember-me">זכור אותי לפעם הבאה</label>
             </fieldset>
 
-            <p>תצוגה מקדימה:</p>
-            <section id="preview"></section>
-
             <fieldset class="cta-wrapper">
                 <button type="submit" class="btn btn-primary">הורד הצהרת בריאות</button>
+                <button type="button" class="btn btn-link" id="btn-preview">תצוגה מקדימה</button>
             </fieldset>
         </form>
         <footer class="container-fluid footer text-muted font-weight-light rtl">
@@ -95,6 +93,9 @@
             </p>
         </footer>
     </main>
+
+    <div id="overlay" class="overlay"></div>
+
     <img src="assets/moe-logo.png" alt="משרד החינוך" id="moe-logo" style="display: none" />
 </body>
 </html>

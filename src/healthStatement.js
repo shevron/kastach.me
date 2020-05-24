@@ -51,9 +51,8 @@ class HealthStatement {
     this.signatureMaxHeight = 60;
   }
 
-  addSignature(signature, date) {
+  addSignature(signature) {
     this.signature = copyCanvasContents(signature);
-    this.date = date;
   }
 
   draw() {

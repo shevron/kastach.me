@@ -35,3 +35,20 @@ body {
   border-top: 1px solid #aaaaaa;
   text-align: center;
 }
+
+.overlay {
+  position: fixed;
+  display: none;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 3px -2px,
+              rgba(0, 0, 0, 0.14) 0px 3px 4px 0px,
+              rgba(0, 0, 0, 0.12) 0px 1px 8px 0px;
+
+  &--visible {
+    display: block;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

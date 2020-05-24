@@ -18,8 +18,8 @@ function initHealthStatement(form, signaturePad) {
 
 function createHealthStatement(form, signature, signaturePad, date = moment()) {
   const formValues = Util.serializeForm(form);
-  const statement = new HealthStatement(formValues);
-  statement.addSignature(signature, date);
+  const statement = new HealthStatement(formValues, date);
+  statement.addSignature(signature);
 
   return statement;
 }
@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sigField = document.getElementById('signature');
   const form = document.getElementById('declaration-form');
   const signature = new SignaturePad(sigField);
-  const previewContainer = document.getElementById('preview');
+  const previewBtn = document.getElementById('btn-preview');
+  const overlay = document.getElementById('overlay');
 
   document.getElementById('signature-clear').addEventListener('click', () => {
     signature.clear();
@@ -62,8 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadHealthStatement(statement);
   });
 
-  const preview = () => createHealthStatement(form, sigField, signature).preview(previewContainer);
-  preview();
-  form.addEventListener('focusout', preview);
-  sigField.addEventListener('mouseout', preview);
+  const preview = () => createHealthStatement(form, sigField, signature).preview(overlay);
+  previewBtn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    preview();
+    overlay.classList.add('overlay--visible');
+  });
+
+  document.body.addEventListener('click', (event) => {
+    if (event.target.id !== 'overlay' && !overlay.contains(event.target) && overlay.classList.contains('overlay--visible')) {
+      overlay.classList.remove('overlay--visible');
+    }
+  });
 });
