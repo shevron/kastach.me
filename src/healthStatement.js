@@ -81,10 +81,15 @@ class HealthStatement {
 
   preview(containerNode) {
     this.draw();
+
+    const dataURL = this.canvas.toDataURL();
+    const img = document.createElement('img');
+    img.src = dataURL;
+
     if (containerNode.hasChildNodes()) {
-      containerNode.replaceChild(this.canvas, containerNode.firstChild);
+      containerNode.replaceChild(img, containerNode.firstChild);
     } else {
-      containerNode.appendChild(this.canvas);
+      containerNode.appendChild(img);
     }
   }
 
