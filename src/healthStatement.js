@@ -85,6 +85,7 @@ class HealthStatement {
     const dataURL = this.canvas.toDataURL();
     const img = document.createElement('img');
     img.src = dataURL;
+    img.classList.add('preview');
 
     if (containerNode.hasChildNodes()) {
       containerNode.replaceChild(img, containerNode.firstChild);
