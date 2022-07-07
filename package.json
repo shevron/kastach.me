@@ -34,7 +34,7 @@
   "dependencies": {
     "bootstrap-v4-rtl": "^4.4.1-2",
     "jquery": "^3.5.1",
-    "moment": "^2.26.0",
+    "moment": "^2.29.4",
     "popper.js": "^1.16.1",
     "signature_pad": "^3.0.0-beta.3",
     "trim-canvas": "^0.1.2"
